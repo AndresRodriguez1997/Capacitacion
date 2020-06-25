@@ -6,12 +6,18 @@ import java.util.Scanner;
  * Hello world!
  *
  */
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+                
+        Carro carro = new Carro();
+        carro.CantidadLlantas(4);
+        carro.TipoFuenteEnergia("Gasolina");
+        carro.Color("Azul");
         
-        Scanner leer = new Scanner (System.in);
+        System.out.print ("El carro creado tiene las siguiente especificaciones: " + carro.CantidadLlantas() + ", " + carro.Color() + ", " + carro.TipoFuenteEnergia() + ".");      
+        
     }
 }
