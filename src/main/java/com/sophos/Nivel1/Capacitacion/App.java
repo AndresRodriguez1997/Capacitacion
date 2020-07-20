@@ -16,17 +16,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class App 
 {
     public static void main( String[] args ){
+    	Driver objDriver = new Driver();
+    	objDriver.navegadorGoogle();
+    	objDriver.navegadorInternetExplore();
+    	
+    }
+    
+    public void clase6_2() {
     	String ruta = "C:\\Users\\andres.rodriguez\\eclipse-workspace\\Capacitacion\\documentoEjemplo.txt";
     	Entradas_Salidas objIO = new Entradas_Salidas();
     	objIO.entradasPorConsola();
     	objIO.lecturaArchivo(ruta);
-    	
     }
     
-    
-    
     public void clase6(){
-                
+        
         WebDriver driver = new FirefoxDriver();
         driver.get("");
         
