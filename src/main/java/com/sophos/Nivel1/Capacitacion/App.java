@@ -1,5 +1,6 @@
 package com.sophos.Nivel1.Capacitacion;
 
+import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -19,6 +20,46 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class App 
 {
     public static void main( String[] args ){
+    	App obj = new App();
+    	obj.paginaMercadoLibre();
+    	
+    }
+    
+    public void paginaMercadoLibre() {
+    	WebDriver driverLocal;
+    	Driver objDriver = new Driver();
+    	objDriver.lanzarNavegador("GOOGLE");
+    	objDriver.navegarA("https://www.mercadolibre.com.co/");
+    	WebElement cajaTexto= objDriver.getDriver().findElement(By.name("as_word"));
+    	cajaTexto.sendKeys("Sillas gamer");
+    	cajaTexto.submit();
+    	
+    	try {
+    		Thread.sleep(5000);
+    	} catch (Exception e) {
+    		
+    	}
+    	
+//    	List<WebElement> listaElementos = objDriver.getDriver()
+//    			.findElements(By.className("objDriver.getDriver()"));
+//    	
+//    	System.out.println("Cantidad elementos encontrados " + listaElementos.size());
+    	
+    	
+    	objDriver.cierreNavegador();
+    }
+    
+    public void clase9() {
+    	Ordenamiento objOrde = new Ordenamiento();
+    	int arreglo [] = {7,5,9,41,74,2,47,34,12};
+    	objOrde.OrdenamientoBurbuja(arreglo);
+    	
+    	for(int i = 0; i < arreglo.length; i++) {
+    		System.out.println("{" + arreglo[i] + "},");    		
+    	}
+    }
+    
+    public void clase8_2() {
     	Driver objDriver = new Driver();
     	objDriver.lanzarNavegador("google");
     	objDriver.navegarA("https://www.google.com/");
@@ -34,9 +75,7 @@ public class App
     	}
     	
     	objDriver.cierreNavegador();
-    	
     }
-    
     public void clase8() {
     	Driver objDriver = new Driver();
     	objDriver.lanzarNavegador("google");
