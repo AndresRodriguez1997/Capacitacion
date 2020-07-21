@@ -12,6 +12,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.sophos.Nivel1.Capacitacion.PatronFactory.Fruta;
+import com.sophos.Nivel1.Capacitacion.PatronFactory.Mango;
+import com.sophos.Nivel1.Capacitacion.PatronFactory.Manzana;
+
 /**
  * Hello world!
  *
@@ -20,11 +24,24 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class App 
 {
     public static void main( String[] args ){
-    	App obj = new App();
-    	obj.paginaMercadoLibre();
+    	Fruta mango = new Mango();
+    	System.out.println(mango.color());
+    	Fruta manzana = new Manzana();
+    	System.out.println(manzana.color());
     	
     }
     
+    public void Patronsingleton() {
+    	PatronSingleton objPatron = PatronSingleton.getInstancia("Instancia uno");
+    	System.out.println(objPatron.getNombre());
+    	PatronSingleton objPatron2 = PatronSingleton.getInstancia("Instancia dos");
+    	System.out.println(">>> " + objPatron2.getNombre());
+    }
+    
+    public void paginaMercadoLibre_2() {
+    	App obj = new App();
+    	obj.paginaMercadoLibre();
+    }
     public void paginaMercadoLibre() {
     	WebDriver driverLocal;
     	Driver objDriver = new Driver();
